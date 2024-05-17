@@ -70,8 +70,11 @@ function Registration() {
 
   const validatePassword = (password) => {
     const letterCount = password.replace(/[^a-zA-Z]/g, "").length;
-    if (letterCount < 8) {
-      return "Password must contain at least 8 letters.";
+    if (password.length < 6) {
+      return "Password must contain at least 6 characters long.";
+    }
+    if (letterCount < 1) {
+      return "Password must contain at least one letter.";
     }
     if (!/\d/.test(password)) {
       return "Password must contain at least one number.";
